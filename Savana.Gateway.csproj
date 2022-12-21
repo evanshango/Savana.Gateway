@@ -11,6 +11,13 @@
       <Content Include="..\.dockerignore">
         <Link>.dockerignore</Link>
       </Content>
+      <Content Include=".github\workflows\gateway-svc.yml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MMLib.SwaggerForOcelot" Version="6.0.0" />
+      <PackageReference Include="Ocelot" Version="18.0.0" />
+      <PackageReference Include="Ocelot.Provider.Polly" Version="18.0.0" />
     </ItemGroup>
 
 </Project>

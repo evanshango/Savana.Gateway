@@ -1,0 +1,122 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:8090"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/",
+      "UpstreamHttpMethod": ["GET"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/swagger",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 8090
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "users",
+      "UpstreamPathTemplate": "/api/v1/auth/{everything}",
+      "UpstreamHttpMethod": ["POST"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/auth/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7011
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "users",
+      "UpstreamPathTemplate": "/api/v1/users",
+      "UpstreamHttpMethod": ["GET"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/users",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7011
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "users",
+      "UpstreamPathTemplate": "/api/v1/users/{everything}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/users/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7011
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "users",
+      "UpstreamPathTemplate": "/api/v1/groups",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/groups",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7011
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "users",
+      "UpstreamPathTemplate": "/api/v1/groups/{everything}",
+      "UpstreamHttpMethod": ["GET", "PUT"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/groups/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7011
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "users",
+      "UpstreamPathTemplate": "/api/v1/roles",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/roles",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7011
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "users",
+      "UpstreamPathTemplate": "/api/v1/roles/{everything}",
+      "UpstreamHttpMethod": ["GET", "PUT"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/roles/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7011
+        }
+      ]
+    }
+  ],
+  "SwaggerEndpoints": [
+    {
+      "Key": "users",
+      "Config": [
+        {
+          "Name": "User.API",
+          "Version": "v1",
+          "Url": "https://localhost:7011/swagger/v1/swagger.json"
+        }
+      ]
+    }
+  ]
+}
