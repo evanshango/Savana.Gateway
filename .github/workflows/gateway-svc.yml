@@ -45,4 +45,4 @@ jobs:
         with:
           tag_name: ${{steps.versioning.outputs.tag}}
           release_name: Release ${{steps.versioning.outputs.tag}}
-          body: ${{steps.versioning.clean_changelog}}
+          body: ${{steps.versioning.outputs.clean_changelog}}
