@@ -37,7 +37,12 @@ jobs:
       - name: Push Image to DockerHub
         run: docker push ${{env.REPO}}:v${{steps.versioning.outputs.version}}
 
-      - name: Release Latest Build
-        run: gh release create ${{ steps.versioning.outputs.tag }} -n "${{ steps.versioning.outputs.clean_changelog }}"
+      - name: Release Latest Build Image
+        uses: actions/create-release@v1
+        if: ${{steps.versioning.outputs.skipped == 'false'}}
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          tag_name: ${{steps.versioning.outputs.tag}}
+          release_name: Release ${{steps.versioning.outputs.tag}}
+          body: ${{steps.versioning.clean_changelog}}
