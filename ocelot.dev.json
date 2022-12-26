@@ -105,6 +105,110 @@
           "Port": 7011
         }
       ]
+    },
+    {
+      "SwaggerKey": "products",
+      "UpstreamPathTemplate": "/api/v1/brands",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/brands",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7012
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "products",
+      "UpstreamPathTemplate": "/api/v1/brands/{everything}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/brands/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7012
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "products",
+      "UpstreamPathTemplate": "/api/v1/categories",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/categories",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7012
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "products",
+      "UpstreamPathTemplate": "/api/v1/categories/{everything}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/categories/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7012
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "products",
+      "UpstreamPathTemplate": "/api/v1/products",
+      "UpstreamHttpMethod": ["GET", "POST"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/products",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7012
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "products",
+      "UpstreamPathTemplate": "/api/v1/products/{everything}",
+      "UpstreamHttpMethod": ["GET", "PUT", "DELETE"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/products/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7012
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "products",
+      "UpstreamPathTemplate": "/api/v1/media/{everything}",
+      "UpstreamHttpMethod": ["POST", "DELETE"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/media/{everything}",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7012
+        }
+      ]
+    },
+    {
+      "SwaggerKey": "basket",
+      "UpstreamPathTemplate": "/api/v1/basket",
+      "UpstreamHttpMethod": ["GET", "POST", "DELETE"],
+      "DownstreamScheme": "https",
+      "DownstreamPathTemplate": "/basket",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7013
+        }
+      ]
     }
   ],
   "SwaggerEndpoints": [
@@ -115,6 +219,26 @@
           "Name": "User.API",
           "Version": "v1",
           "Url": "https://localhost:7011/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "products",
+      "Config": [
+        {
+          "Name": "Product.API",
+          "Version": "v1",
+          "Url": "https://localhost:7012/swagger/v1/swagger.json"
+        }
+      ]
+    },
+    {
+      "Key": "basket",
+      "Config": [
+        {
+          "Name": "Basket.API",
+          "Version": "v1",
+          "Url": "https://localhost:7013/swagger/v1/swagger.json"
         }
       ]
     }
